@@ -46,11 +46,14 @@ class Level:
         wall = pygame.image.load("images/wall.png").convert()
         starting = pygame.image.load("images/start.png").convert()
         out = pygame.image.load("images/out.png").convert()
+        ether_image = pygame.image.load("images/ether.png").convert_alpha()
+        needle_image = pygame.image.load("images/needle.png").convert_alpha()
+        tube_image = pygame.image.load("images/tube.png").convert_alpha()
 
 
         for key,value in self.my_map.items():
         
-            if value == "m":
+            if value == "w":
                 screen.blit(wall, (key[1] * sprites_size, key[0] * sprites_size))
             if value == "f":
                 screen.blit(floor, (key[1] * sprites_size, key[0] * sprites_size))
@@ -58,4 +61,11 @@ class Level:
                 screen.blit(starting, (key[1] * sprites_size, key[0] * sprites_size))
             if value == "o":
                 screen.blit(out, (key[1] * sprites_size, key[0] * sprites_size))
+            if value == "ether":
+                screen.blit(ether_image, (key[1] * sprites_size, key[0] * sprites_size))
+            if value == "needle":
+                screen.blit(needle_image, (key[1] * sprites_size, key[0] * sprites_size))
+            if value == "tube":
+                screen.blit(tube_image, (key[1] * sprites_size, key[0] * sprites_size))
+
             pygame.display.flip()
