@@ -6,14 +6,15 @@ Game Saving MacGyver : this game is a simple labyrinth game with conditions of v
 
 The movements will be made with the keyboard : right, left, up and down arrow keys.
 
-The conditions of victory is simple : collect the 3 items on the map 
+The conditions of victory is simple : collect the 3 items on the map
 before heading to the issue guarded by Murdoc. If you don't have all the items, you loose.
 
 Others files used : class_map, class_player, class_object, variables, level and images.
 """
 
 
-import pygame, sys
+import pygame
+import sys
 from pygame.locals import *
 
 # import my class
@@ -148,6 +149,6 @@ while continue_program == 1:
             and tube in mcgyver.inventory:
                 continue_home_page = 1
                 continue_game = 0
-            else :
+            else:
                 sys.exit()
                 
