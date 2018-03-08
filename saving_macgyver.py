@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 #-*- coding: utf-8 -*-
 
 """
@@ -133,13 +134,12 @@ while continue_program == 1:
                     mcgyver.inventory.append(tube)
                     my_level_map.my_map[tube.position] = "f"
 
-                # clean the screen before updating 
+                # clean the screen before updating
                 my_level_map.afficher(SCREEN)
-                pygame.display.flip()
 
                 # update character's position on the map
                 SCREEN.blit(mcgyver.image, (mcgyver.x_pix, mcgyver.y_pix))
-                pygame.display.flip()
+                pygame.display.update()
 
         # conditions of victory
         if mcgyver.position == murdoc.position:

@@ -1,4 +1,6 @@
+#! /usr/bin/env python3
 #-*- coding: utf-8 -*-
+
 import pygame
 from pygame.locals import *
 
@@ -75,5 +77,3 @@ class Level:
                 screen.blit(needle_image, (key[1] * sprites_size, key[0] * sprites_size))
             if value == "tube":
                 screen.blit(tube_image, (key[1] * sprites_size, key[0] * sprites_size))
-
-            pygame.display.flip()
