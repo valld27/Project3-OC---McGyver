@@ -32,6 +32,8 @@ pygame.display.set_caption(title)
 
 
 continue_program = 1
+continue_win = 0
+continue_loose = 0
 
 # Program's loop
 while continue_program == 1:
@@ -41,8 +43,8 @@ while continue_program == 1:
     # home_page's loop
     while continue_home_page == 1:
 
-        accueil = pygame.image.load("images/accueil.png")
-        SCREEN.blit(accueil, (0, 0))
+        home_page = pygame.image.load(HOME)
+        SCREEN.blit(home_page, (0, 0))
         pygame.display.flip()
 
 
@@ -63,6 +65,21 @@ while continue_program == 1:
                     continue_home_page = 0
                     continue_game = 1
 
+                if event.key == K_F2:
+                    choice = "level/level2.txt"
+                    continue_home_page = 0
+                    continue_game = 1
+
+                if event.key == K_F3:
+                    choice = "level/level3.txt"
+                    continue_home_page = 0
+                    continue_game = 1
+
+                if event.key == K_F4:
+                    choice = "level/level4.txt"
+                    continue_home_page = 0
+                    continue_game = 1
+                    
     # generation of my map
     if choice != 0:
         my_level_map = Level(choice)
@@ -147,8 +164,51 @@ while continue_program == 1:
 
             if ether in mcgyver.inventory and needle in mcgyver.inventory \
             and tube in mcgyver.inventory:
-                continue_home_page = 1
+                continue_win = 1
                 continue_game = 0
             else:
+                continue_loose = 1
+                continue_game = 0
+
+    # victory loop. provide the choice to continue or quit
+    while continue_win == 1:
+        
+        page_win = pygame.image.load(WIN).convert()
+        SCREEN.blit(page_win, (0, 0))
+        pygame.display.flip()
+
+        for event in pygame.event.get():
+
+            if event.type == pygame.QUIT:
                 sys.exit()
+
+            elif event.type == pygame.KEYDOWN:
+
+                if event.key == K_ESCAPE:
+                    sys.exit()
+
+                if event.key == K_RETURN or event.key == K_KP_ENTER:
+                    continue_home_page = 1
+                    continue_win = 0
+
+    # defeat loop. provide the choice to continue or quit
+    while continue_loose == 1:
+        
+        page_loose = pygame.image.load(LOOSE).convert()
+        SCREEN.blit(page_loose, (0, 0))
+        pygame.display.flip()
+
+        for event in pygame.event.get():
+
+            if event.type == pygame.QUIT:
+                sys.exit()
+
+            elif event.type == pygame.KEYDOWN:
+
+                if event.key == K_ESCAPE:
+                    sys.exit()
+
+                if event.key == K_RETURN or event.key == K_KP_ENTER:
+                    continue_home_page = 1
+                    continue_loose = 0
                 
