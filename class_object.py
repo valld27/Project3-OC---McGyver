@@ -43,3 +43,10 @@ class Object:
             self.y_pix = self.y_obj * sprites_size
             
         my_level[self.position] = self.nom
+
+    def collect(self, character, level):
+
+        if character.position == self.position:
+            character.inventory.append(self)
+            level[self.position] = "f"
+

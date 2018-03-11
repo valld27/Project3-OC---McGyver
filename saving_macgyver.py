@@ -140,17 +140,9 @@ while continue_program == 1:
                 # if character is on the same square as an object
                 # he collect the object in his inventory and
                 # the object is removed from the map
-                if mcgyver.position == ether.position:
-                    mcgyver.inventory.append(ether)
-                    my_level_map.my_map[ether.position] = "f"
-
-                elif mcgyver.position == needle.position:
-                    mcgyver.inventory.append(needle)
-                    my_level_map.my_map[needle.position] = "f"
-
-                elif mcgyver.position == tube.position:
-                    mcgyver.inventory.append(tube)
-                    my_level_map.my_map[tube.position] = "f"
+                ether.collect(mcgyver, my_level_map.my_map)
+                needle.collect(mcgyver, my_level_map.my_map)
+                tube.collect(mcgyver, my_level_map.my_map)
 
                 # clean the screen before updating
                 my_level_map.afficher(SCREEN)
