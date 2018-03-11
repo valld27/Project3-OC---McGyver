@@ -21,7 +21,7 @@ class Player:
 
         self.image = pygame.image.load(image)
 
-    def generer(self, level):
+    def generate(self, level):
         """method that generate the position of my character according to the level design
         level mark out the level_map generating by the class_map"""
         c = 1

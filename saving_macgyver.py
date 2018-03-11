@@ -104,8 +104,8 @@ while continue_program == 1:
         murdoc = Player("images/murdoc.png", "o")
 
         # attibute position to my characters according to the level design.
-        mcgyver.generer(my_level_map.my_map)
-        murdoc.generer(my_level_map.my_map)
+        mcgyver.generate(my_level_map.my_map)
+        murdoc.generate(my_level_map.my_map)
 
         # update my display
         SCREEN.blit(mcgyver.image, (mcgyver.x_pix, mcgyver.y_pix))
