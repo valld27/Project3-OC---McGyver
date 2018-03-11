@@ -58,7 +58,7 @@ while continue_program == 1:
                 if event.key == K_ESCAPE:
                     sys.exit()
 
-                #In anticipation of creating a multi-level game :
+                # creating a multi-level game :
                 # F1 = level1, F2 = level2....etc
                 if event.key == K_F1:
                     choice = "level/level1.txt"
